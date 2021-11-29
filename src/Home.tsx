@@ -44,7 +44,7 @@ const Home = (props: HomeProps) => {
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
-
+  const [rollingg,setRollingg] = useState(true);
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
   const [itemsRemaining, setItemsRemaining] = useState(0);
@@ -89,6 +89,7 @@ const Home = (props: HomeProps) => {
   const onMint = async () => {
     try {
       setIsMinting(true);
+      setRollingg(false);
       if (wallet && candyMachine?.program) {
         const mintTxId = await mintOneToken(
           candyMachine,
@@ -111,12 +112,14 @@ const Home = (props: HomeProps) => {
             message: "Congratulations! Mint succeeded!",
             severity: "success",
           });
+          setRollingg(true);
         } else {
           setAlertState({
             open: true,
             message: "Mint failed! Please try again!",
             severity: "error",
           });
+          setRollingg(true);
         }
       }
     } catch (error: any) {
@@ -143,6 +146,7 @@ const Home = (props: HomeProps) => {
         message,
         severity: "error",
       });
+      setRollingg(true);
     } finally {
       if (wallet) {
         const balance = await props.connection.getBalance(wallet.publicKey);
@@ -239,6 +243,7 @@ const Home = (props: HomeProps) => {
           KOOK<sup>Z</sup>
         </b>
       </p>
+      <br/>
 
 
       {/* {wallet && (
@@ -255,7 +260,9 @@ const Home = (props: HomeProps) => {
 
       <MintContainer>
         {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
+          <ConnectButton style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black"}}><span style={{fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}>Connect Wallet</span></ConnectButton>
+          // <ConnectButton style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}><span style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></span></ConnectButton>
+          // <div style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></div>
         ) : (
 
           <>
@@ -263,7 +270,7 @@ const Home = (props: HomeProps) => {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
           <div id="react-root"></div>
-          <Slots />
+          <Slots props={rollingg}/>
           
 
 
@@ -271,6 +278,7 @@ const Home = (props: HomeProps) => {
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
             variant="contained"
+            style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black",fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}
           >
             {isSoldOut ? (
               "SOLD OUT"
