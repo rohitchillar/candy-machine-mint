@@ -1,7 +1,7 @@
-
-/* @font-face {
+/* 
+@font-face {
   font-family: 'Avenir';
-  src: local('Avenir'), url(./assets/fonts/AvenirLTStd-Black.otf) format('opentype');
+  src: local('Avenir'), url(./assets/AvenirLTStd-Black.otf) format('opentype');
 } */
 
 /* @font-face {
@@ -23,6 +23,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
+  font-family: 'Roboto', sans-serif;
+
   background-color: #303030;
   background: url('./assets/images/SK web page1.jpeg');
   width: 100%;
@@ -53,7 +55,8 @@ code {
 .grow:hover { transform: scale(1.1); }
 
 #logo-title{
-  height: 5.5rem;
+  height: 4rem;
+  margin-bottom: 12px;
 }
 
 MintButton{
@@ -64,6 +67,9 @@ MintButton{
   height: 1.5rem;
   width: auto;
   margin: 5px;
+}
+#mint-price{
+  text-align: center;
 }
 #gitBookLogo{
   height: 3rem;
@@ -95,7 +101,7 @@ MintButton{
 }
 
 #image-container-wallet-img{
-  height: 8rem;
+  height: 5rem;
   width: auto;
 }
 
@@ -190,6 +196,10 @@ button{
   justify-content: center;
 }
 /* slot machine */
+.SlotMachine{
+  display: flex;
+  justify-content: center;
+}
 .img-slot{
   height: 45px;  
   width: 45px;
@@ -200,6 +210,10 @@ button{
   display: inline-block;
   height: 100px;
   width: 80px;
+
+  /* lm-changes */
+  transform: scale(1.4);
+  margin: 20px;
 }
 
 section {

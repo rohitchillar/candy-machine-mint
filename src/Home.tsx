@@ -201,14 +201,14 @@ const Home = (props: HomeProps) => {
 
 
 
-<MintContainer>
+<MintContainer style={{display:"flex" , flexDirection:"column" ,alignItems:"center"}}>
         {!wallet ? (
 
 
 // ,padding: 9px,width: 16rem,text-align: center
-          <ConnectButton style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"9px" , width:"16rem" , color:"#000" , justifyContent:"center"}}>
+          <ConnectButton style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"5px" , width:"16rem" , color:"#000" , justifyContent:"center"}}>
             
-            <span style={{fontSize:"1rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Connect Wallet</span
+            <span style={{fontSize:"1.2rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Connect Wallet</span
             
             ></ConnectButton>
           // <ConnectButton style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}><span style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></span></ConnectButton>
@@ -229,7 +229,7 @@ const Home = (props: HomeProps) => {
             onClick={onMint}
             variant="contained"
             // style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black",fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}
-            style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"9px" , width:"16rem" , color:"#000" ,  justifyContent:"center"}}
+            style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"5px" , width:"16rem" , color:"#000" ,  justifyContent:"center"}}
           >
 
             {isSoldOut ? (
@@ -240,7 +240,7 @@ const Home = (props: HomeProps) => {
               isMinting ? (
                 <CircularProgress />
               ) : (
-                <span style={{fontSize:"1rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Mint Now</span>
+                <span style={{fontSize:"1.2rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Mint Now</span>
                 )
             ) : (
               <Countdown
@@ -251,6 +251,7 @@ const Home = (props: HomeProps) => {
               />
             )}
           </MintButton>
+            <p id ="mint-price">MINT PRICE : 0.25 SOL</p>
           <div id="image-container-wallet">
         <img src={"./wallet.png"} alt="altt" id="image-container-wallet-img" />
         <div className="centered">
@@ -286,9 +287,9 @@ const Home = (props: HomeProps) => {
         </Alert>
       </Snackbar>
 
-      <br />
+      
     
-      <p style={{fontFamily:"Avenir - Black"}}>FOR PROJECT WHITEPAPER CHECK</p>
+      <p>FOR PROJECT WHITEPAPER CHECK</p>
       <a href="https://surfkookz.gitbook.io/getting-started/">
         <img id="gitBookLogo" className="grow" src={"/GitBook.png"} />
       </a>
