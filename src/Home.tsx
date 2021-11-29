@@ -172,7 +172,7 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
-      <div className="hour-glass">
+      {/* <div className="hour-glass">
         <table className="clock-table">
           <td>
             <span>
@@ -181,8 +181,7 @@ const Home = (props: HomeProps) => {
             </span>
           </td>
         </table>
-        {/* </div> */}
-      </div>
+      </div> */}
       <p className="home-title">
         SURF
         <b>
