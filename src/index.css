@@ -1,8 +1,8 @@
 
-@font-face {
+/* @font-face {
   font-family: 'Avenir';
   src: local('Avenir'), url(./assets/fonts/AvenirLTStd-Black.otf) format('opentype');
-}
+} */
 
 /* @font-face {
     font-family: 'Lato';
@@ -30,8 +30,8 @@ body {
   background-size: cover;
 
   /* CR-changes */
-  font-family: Avenir, Arial, serif;
-  font-weight: black;
+  /* font-family: Avenir, Arial, serif; */
+  /* font-weight: black; */
 
  
   color: #FFFFFF;
