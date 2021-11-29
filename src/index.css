@@ -1,16 +1,37 @@
 
+@font-face {
+  font-family: 'Avenir';
+  src: local('Avenir'), url(./assets/fonts/AvenirLTStd-Black.otf) format('opentype');
+}
+
+/* @font-face {
+    font-family: 'Lato';
+    font-weight: 900;
+    src: local('Lato'), url(./fonts/Lato-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 900;
+    src: local('Lato'), url(./fonts/Lato-Black.otf) format('opentype');
+} */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
   background-color: #303030;
   background: url('./assets/images/cm-background.jpg');
   width: 100%;
   height: 100%;
   background-size: cover;
+
+  /* CR-changes */
+  font-family: Avenir, Arial, serif;
+  font-weight: black;
 
  
   color: #FFFFFF;
@@ -23,7 +44,10 @@ code {
 
 
 
+
 /* CR-changes */
+
+
 button{
   background-color: green;
 }

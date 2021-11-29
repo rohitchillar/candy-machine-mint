@@ -15,6 +15,10 @@ import discordLogo from "./assets/icons/discord.svg";
 import instagramLogo from "./assets/icons/instagram.svg"; 
 import twitterLogo from "./assets/icons/twitter.svg"; 
 import GitBookLogo from "./assets/icons/GitBook.png"; 
+import hourGlass from "./assets/images/Flat hourglass.gif"; 
+
+// Flat hourglass.gif
+
 
 
 
@@ -236,6 +240,8 @@ const Home = (props: HomeProps) => {
               </g>
             </g>
           </svg>
+
+          <img src={hourGlass} alt="loading..." />
         {/* </div> */}
       </div>
       <p className="home-title">
@@ -257,6 +263,8 @@ const Home = (props: HomeProps) => {
       {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
       {wallet && <p>Remaining: {itemsRemaining}</p>} */}
+
+
 
       <MintContainer>
         {!wallet ? (
