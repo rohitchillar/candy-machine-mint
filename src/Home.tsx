@@ -253,7 +253,7 @@ const Home = (props: HomeProps) => {
 
       {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
-      <MintContainer>
+      {/* <MintContainer>
         {!wallet ? (
           <ConnectButton>Connect Wallet</ConnectButton>
         ) : (
@@ -261,9 +261,9 @@ const Home = (props: HomeProps) => {
           <>
 
           <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script> */}
           {/* <div id="react-root"></div>  */}
-          <Slots />
+          {/* <Slots />
           
 
 
@@ -292,7 +292,7 @@ const Home = (props: HomeProps) => {
       </>
 
         )}
-      </MintContainer>
+      </MintContainer> */}
 
       <Snackbar
         open={alertState.open}
@@ -307,8 +307,8 @@ const Home = (props: HomeProps) => {
         </Alert>
       </Snackbar>
 
-     
-
+     <br/>
+      <h1>Minting starts at 9 PM UTC</h1>
       <p>FOR PROJECT WHITEPAPER CHECK</p>
       <a href="https://surfkookz.gitbook.io/getting-started/">
         <img id = "gitBookLogo" src={"/GitBook.png"} />
