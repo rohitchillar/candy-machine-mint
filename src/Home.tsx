@@ -11,11 +11,6 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
-import discordLogo from "./assets/icons/discord.svg"; 
-import instagramLogo from "./assets/icons/instagram.svg"; 
-import twitterLogo from "./assets/icons/twitter.svg"; 
-import GitBookLogo from "./assets/icons/GitBook.png"; 
-
 
 
 import {
@@ -316,17 +311,17 @@ const Home = (props: HomeProps) => {
 
       <p>FOR PROJECT WHITEPAPER CHECK</p>
       <a href="https://surfkookz.gitbook.io/getting-started/">
-        <img id = "gitBookLogo" src = {GitBookLogo} />
+        <img id = "gitBookLogo" src={"/GitBook.png"} />
         </a>
       <div className="social-links">
         <a href="https://discord.gg/uWYcBM4R68">
-        <img className = "social-icon" src = {discordLogo} />
+        <img className = "social-icon" src="./discord.svg" />
         </a>
         <a href="https://twitter.com/surfKookz">
-        <img className = "social-icon" src = {twitterLogo} />
+        <img className = "social-icon" src="./twitter.svg" />
         </a>
         <a href="https://www.instagram.com/surfkookz/">
-        <img className = "social-icon" src = {instagramLogo} />
+        <img className = "social-icon" src="./instagram.svg" />
         </a>
         
 
