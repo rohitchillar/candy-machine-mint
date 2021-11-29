@@ -201,7 +201,7 @@ const Home = (props: HomeProps) => {
 
 
 
-<MintContainer style={{display:"flex" , flexDirection:"column" ,alignItems:"center"}}>
+{/* <MintContainer style={{display:"flex" , flexDirection:"column" ,alignItems:"center"}}>
         {!wallet ? (
 
 
@@ -272,7 +272,9 @@ const Home = (props: HomeProps) => {
         )}
 
        
-      </MintContainer>
+      </MintContainer> */}
+
+      <h2> Mint Goes Live At 09:00 UTC</h2>
 
       <Snackbar
         open={alertState.open}
