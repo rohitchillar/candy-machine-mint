@@ -274,7 +274,7 @@ const Home = (props: HomeProps) => {
        
       </MintContainer> */}
 
-      <h2> Mint Goes Live At 09:00 UTC</h2>
+      <h2>Pre Sale goes live at 8pm UTC</h2>
 
       <Snackbar
         open={alertState.open}
