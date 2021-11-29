@@ -27,6 +27,12 @@ code {
 button{
   background-color: green;
 }
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+#logo-title{
+  height: 5.5rem;
+}
 
 MintButton{
   background-color: hotpink;

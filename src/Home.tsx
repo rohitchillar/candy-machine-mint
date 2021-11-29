@@ -235,12 +235,15 @@ const Home = (props: HomeProps) => {
         </svg>
         {/* </div> */}
       </div>
-      <p className="home-title">
+      {/* <p className="home-title">
         SURF
         <b>
           KOOK<sup>Z</sup>
         </b>
-      </p>
+      </p> */}
+
+      <img id = "logo-title" src="./surfkookz-logo-title.png" />
+
 
       {/* {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
@@ -322,17 +325,17 @@ const Home = (props: HomeProps) => {
         </div>
       </a>
       <a href="https://surfkookz.gitbook.io/getting-started/">
-        <img id="gitBookLogo" src={"/GitBook.png"} />
+        <img id="gitBookLogo" className="grow" src={"/GitBook.png"} />
       </a>
       <div className="social-links">
         <a href="https://discord.gg/uWYcBM4R68">
-          <img className="social-icon" src="./discord.svg" />
+          <img className="social-icon grow" src="./discord.svg" />
         </a>
         <a href="https://twitter.com/surfKookz">
-          <img className="social-icon" src="./twitter.svg" />
+          <img className="social-icon grow" src="./twitter.svg" />
         </a>
         <a href="https://www.instagram.com/surfkookz/">
-          <img className="social-icon" src="./instagram.svg" />
+          <img className="social-icon grow" src="./instagram.svg" />
         </a>
       </div>
     </main>
