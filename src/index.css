@@ -75,51 +75,51 @@ main {
     margin: 0;
     box-sizing: border-box;
   }
-  table {
+  .clock-table {
+    
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
     border-spacing: 0;
     border-collapse: collapse;
   }
 
-  td {
+  .clock-table td {
     vertical-align: middle;
     text-align: center;
   }
 
-  td > span {
+  .clock-table  td > span {
     display: inline-block;
     position: relative;
-    width: 50px;
-    height: 30px;
+    width: 45px;
+    height: 25px;
     animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-name: spin;
     animation-timing-function: linear;
   }
 
-  span span {
+  .clock-table span span {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: black;
-    border: 2px solid #ffff;
     overflow: hidden;
     -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
     clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
   }
 
-  span span:first-of-type {
+  .clock-table  span span:first-of-type {
     transform: translateY(-50%);
   }
 
-  span span:last-of-type {
+  .clock-table  span span:last-of-type {
     transform: translateY(50%) rotate(180deg);
   }
 
-  span span::before {
+  .clock-table span span::before {
     content: "";
     display: block;
     position: absolute;
@@ -134,7 +134,7 @@ main {
     animation-timing-function: linear;
   }
 
-  span span:last-of-type::before {
+  .clock-table span span:last-of-type::before {
     animation-delay: -2s;
   }
 
