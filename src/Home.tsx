@@ -11,6 +11,13 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
+import discordLogo from "./assets/icons/discord.svg"; 
+import instagramLogo from "./assets/icons/instagram.svg"; 
+import twitterLogo from "./assets/icons/twitter.svg"; 
+import GitBookLogo from "./assets/icons/GitBook.png"; 
+
+
+
 import {
   CandyMachine,
   awaitTransactionSignatureConfirmation,
@@ -308,9 +315,21 @@ const Home = (props: HomeProps) => {
      
 
       <p>FOR PROJECT WHITEPAPER CHECK</p>
-      <a>GIRBOOK</a>
+      <a href="https://surfkookz.gitbook.io/getting-started/">
+        <img id = "gitBookLogo" src = {GitBookLogo} />
+        </a>
       <div className="social-links">
-              heyy
+        <a href="https://discord.gg/uWYcBM4R68">
+        <img className = "social-icon" src = {discordLogo} />
+        </a>
+        <a href="https://twitter.com/surfKookz">
+        <img className = "social-icon" src = {twitterLogo} />
+        </a>
+        <a href="https://www.instagram.com/surfkookz/">
+        <img className = "social-icon" src = {instagramLogo} />
+        </a>
+        
+
       </div>
     </main>
   );

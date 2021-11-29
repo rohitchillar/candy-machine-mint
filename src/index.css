@@ -32,6 +32,15 @@ MintButton{
   background-color: hotpink;
 }
 
+.social-icon{
+  height: 1.5rem;
+  width: auto;
+  margin: 5px;
+}
+#gitBookLogo{
+  height: 3rem;
+}
+
 main{
   display: flex;
   flex-direction: column;
