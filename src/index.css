@@ -75,9 +75,23 @@ MintButton{
   /* margin: 5px; */
 }
 
+.container {
+ 
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #image-container-wallet {
-  position: relative;
+  /* position: relative; */
   /* overflow: hidden; */
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 #image-container-wallet-img{
