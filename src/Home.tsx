@@ -46,7 +46,7 @@ const Home = (props: HomeProps) => {
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
-
+  const [rollingg,setRollingg] = useState(true);
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
   const [itemsRemaining, setItemsRemaining] = useState(0);
@@ -91,6 +91,7 @@ const Home = (props: HomeProps) => {
   const onMint = async () => {
     try {
       setIsMinting(true);
+      setRollingg(false);
       if (wallet && candyMachine?.program) {
         const mintTxId = await mintOneToken(
           candyMachine,
@@ -113,12 +114,14 @@ const Home = (props: HomeProps) => {
             message: "Congratulations! Mint succeeded!",
             severity: "success",
           });
+          setRollingg(true);
         } else {
           setAlertState({
             open: true,
             message: "Mint failed! Please try again!",
             severity: "error",
           });
+          setRollingg(true);
         }
       }
     } catch (error: any) {
@@ -145,6 +148,7 @@ const Home = (props: HomeProps) => {
         message,
         severity: "error",
       });
+      setRollingg(true);
     } finally {
       if (wallet) {
         const balance = await props.connection.getBalance(wallet.publicKey);
@@ -172,69 +176,7 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
-      <div className="hour-glass">
-        {/* <div> */}
-        <svg
-          width="50px"
-          height="60px"
-          viewBox="0 0 73 88"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          // xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <g id="hourglass">
-            <path
-              d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
-              id="glass"
-              fill="#ECF1F6"
-            ></path>
-            <rect
-              id="top-plate"
-              fill="#4D4544"
-              x="0"
-              y="0"
-              width="74"
-              height="8"
-              rx="2"
-            ></rect>
-            <rect
-              id="bottom-plate"
-              fill="#4D4544"
-              x="0"
-              y="80"
-              width="74"
-              height="8"
-              rx="2"
-            ></rect>
-
-            <g id="top-sand" transform="translate(18, 21)">
-              <clipPath id="top-clip-path" fill="white">
-                <rect x="0" y="0" width="38" height="21"></rect>
-              </clipPath>
-
-              <path
-                fill="#F5A623"
-                clip-path="url(#top-clip-path)"
-                d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
-              ></path>
-            </g>
-
-            <g id="bottom-sand" transform="translate(18, 55)">
-              <clipPath id="bottom-clip-path" fill="white">
-                <rect x="0" y="0" width="38" height="21"></rect>
-              </clipPath>
-
-              <g clip-path="url(#bottom-clip-path)">
-                <path
-                  fill="#F5A623"
-                  d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
-                ></path>
-              </g>
-            </g>
-          </g>
-        </svg>
-        {/* </div> */}
-      </div>
+    
       {/* <p className="home-title">
         SURF
         <b>
@@ -259,39 +201,47 @@ const Home = (props: HomeProps) => {
 
 
 
-      <MintContainer>
+<MintContainer>
         {!wallet ? (
-          <ConnectButton>Connect Wallet</ConnectButton>
+          <ConnectButton style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black"}}><span style={{fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}>Connect Wallet</span></ConnectButton>
+          // <ConnectButton style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}><span style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></span></ConnectButton>
+          // <div style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></div>
         ) : (
-          <>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
-            <div id="react-root"></div>
-            <Slots />
 
-            <MintButton
-              disabled={isSoldOut || isMinting || !isActive}
-              onClick={onMint}
-              variant="contained"
-            >
-              {isSoldOut ? (
-                "SOLD OUT"
-              ) : isActive ? (
-                isMinting ? (
-                  <CircularProgress />
-                ) : (
-                  "MINT"
-                )
+          <>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
+          <div id="react-root"></div>
+          <Slots props={rollingg}/>
+          
+
+
+          <MintButton
+            disabled={isSoldOut || isMinting || !isActive}
+            onClick={onMint}
+            variant="contained"
+            style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black",fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}
+          >
+            {isSoldOut ? (
+              "SOLD OUT"
+            ) : isActive ? (
+              isMinting ? (
+                <CircularProgress />
               ) : (
-                <Countdown
-                  date={startDate}
-                  onMount={({ completed }) => completed && setIsActive(true)}
-                  onComplete={() => setIsActive(true)}
-                  renderer={renderCounter}
-                />
-              )}
-            </MintButton>
-          </>
+                "MINT"
+              )
+            ) : (
+              <Countdown
+                date={startDate}
+                onMount={({ completed }) => completed && setIsActive(true)}
+                onComplete={() => setIsActive(true)}
+                renderer={renderCounter}
+              />
+            )}
+          </MintButton>
+      </>
+
         )}
       </MintContainer>
 

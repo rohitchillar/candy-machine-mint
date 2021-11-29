@@ -173,6 +173,7 @@ button{
 .img-slot{
   height: 45px;  
   width: 45px;
+  margin-top: 0.7rem;
 }
 .slot {
   position: relative;
@@ -248,11 +249,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
    text-decoration: none;
  }
 
-
-.rolling {
-  /* animation: blinkingText 1.2s infinite; */
-
-}
 
 @keyframes blinkingText {
   0% {
