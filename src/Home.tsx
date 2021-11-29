@@ -312,8 +312,10 @@ const Home = (props: HomeProps) => {
           {wallet && (
             <>
               <p className="wallet">
-                {(balance || 0).toFixed(2)} <br />
-                SOL
+                 3.34 <br />
+                <div style={{textAlign: 'center'}}>
+                  SOL
+                  </div>
               </p>
             </>
           )}
