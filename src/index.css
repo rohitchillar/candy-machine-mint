@@ -41,6 +41,26 @@ MintButton{
   height: 3rem;
 }
 
+.social-icons{
+  height: 10rem;
+  width: auto;
+  /* margin: 5px; */
+}
+
+#image-container {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+
+.top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffff;
+  font-size: 1rem;
+}
 main{
   display: flex;
   flex-direction: column;
