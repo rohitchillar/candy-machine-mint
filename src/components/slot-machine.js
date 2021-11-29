@@ -65,7 +65,7 @@ class Slots extends Component {
       <div className="SlotMachine">
 
         {/* {this.roll} */}
-        {/* {!this.state.rolling && this.roll} */}
+        {this.state.rolling && this.roll}
 
         <div className="slot">
           <section>
