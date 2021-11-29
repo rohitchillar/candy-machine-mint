@@ -280,12 +280,12 @@ function Slots(props){
             </div>
           </section>
         </div>
-        <div
+        {/* <div
           className={!rolling ? "roll rolling" : "roll"}
           onClick={!rolling && roll}
           disabled={rolling}>
           {rolling ? "Rolling..." : "ROLL"}
-        </div>
+        </div> */}
       </div>
     ); 
 };

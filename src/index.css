@@ -122,6 +122,7 @@ button{
 .img-slot{
   height: 45px;  
   width: 45px;
+  margin-top: 0.7rem;
 }
 .slot {
   position: relative;
