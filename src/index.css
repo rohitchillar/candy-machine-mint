@@ -48,9 +48,7 @@ code {
 /* CR-changes */
 
 
-button{
-  background-color: green;
-}
+
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
 
@@ -77,9 +75,14 @@ MintButton{
   /* margin: 5px; */
 }
 
-#image-container {
+#image-container-wallet {
   position: relative;
   /* overflow: hidden; */
+}
+
+#image-container-wallet-img{
+  height: 8rem;
+  width: auto;
 }
 
 
@@ -169,6 +172,9 @@ button{
   border:#8f6B29 2px solid;
 }
 
+.MuiButton-label {
+  justify-content: center;
+}
 /* slot machine */
 .img-slot{
   height: 45px;  
