@@ -11,16 +11,7 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletDialogButton } from "@solana/wallet-adapter-material-ui";
 
-import discordLogo from "./assets/icons/discord.svg"; 
-import instagramLogo from "./assets/icons/instagram.svg"; 
-import twitterLogo from "./assets/icons/twitter.svg"; 
-import GitBookLogo from "./assets/icons/GitBook.png"; 
-import hourGlass from "./assets/images/Flat hourglass.gif"; 
-
-// Flat hourglass.gif
-
-
-
+import wallet from "./assets/images/wallet.png";
 
 import {
   CandyMachine,
@@ -37,7 +28,9 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)`background-color: yellow;`; // add your styles here
+const MintButton = styled(Button)`
+  background-color: yellow;
+`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -181,75 +174,75 @@ const Home = (props: HomeProps) => {
     <main>
       <div className="hour-glass">
         {/* <div> */}
-          <svg
-            width="50px"
-            height="60px"
-            viewBox="0 0 73 88"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            // xmlns:xlink="http://www.w3.org/1999/xlink"
-          >
-            <g id="hourglass">
+        <svg
+          width="50px"
+          height="60px"
+          viewBox="0 0 73 88"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          // xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g id="hourglass">
+            <path
+              d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
+              id="glass"
+              fill="#ECF1F6"
+            ></path>
+            <rect
+              id="top-plate"
+              fill="#4D4544"
+              x="0"
+              y="0"
+              width="74"
+              height="8"
+              rx="2"
+            ></rect>
+            <rect
+              id="bottom-plate"
+              fill="#4D4544"
+              x="0"
+              y="80"
+              width="74"
+              height="8"
+              rx="2"
+            ></rect>
+
+            <g id="top-sand" transform="translate(18, 21)">
+              <clipPath id="top-clip-path" fill="white">
+                <rect x="0" y="0" width="38" height="21"></rect>
+              </clipPath>
+
               <path
-                d="M63.8761664,86 C63.9491436,84.74063 64,83.4707791 64,82.1818182 C64,65.2090455 57.5148507,50.6237818 48.20041,44 C57.5148507,37.3762182 64,22.7909545 64,5.81818182 C64,4.52922091 63.9491436,3.25937 63.8761664,2 L10.1238336,2 C10.0508564,3.25937 10,4.52922091 10,5.81818182 C10,22.7909545 16.4851493,37.3762182 25.79959,44 C16.4851493,50.6237818 10,65.2090455 10,82.1818182 C10,83.4707791 10.0508564,84.74063 10.1238336,86 L63.8761664,86 Z"
-                id="glass"
-                fill="#ECF1F6"
+                fill="#F5A623"
+                clip-path="url(#top-clip-path)"
+                d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
               ></path>
-              <rect
-                id="top-plate"
-                fill="#4D4544"
-                x="0"
-                y="0"
-                width="74"
-                height="8"
-                rx="2"
-              ></rect>
-              <rect
-                id="bottom-plate"
-                fill="#4D4544"
-                x="0"
-                y="80"
-                width="74"
-                height="8"
-                rx="2"
-              ></rect>
+            </g>
 
-              <g id="top-sand" transform="translate(18, 21)">
-                <clipPath id="top-clip-path" fill="white">
-                  <rect x="0" y="0" width="38" height="21"></rect>
-                </clipPath>
+            <g id="bottom-sand" transform="translate(18, 55)">
+              <clipPath id="bottom-clip-path" fill="white">
+                <rect x="0" y="0" width="38" height="21"></rect>
+              </clipPath>
 
+              <g clip-path="url(#bottom-clip-path)">
                 <path
                   fill="#F5A623"
-                  clip-path="url(#top-clip-path)"
-                  d="M38,0 C36.218769,7.51704545 24.818769,21 19,21 C13.418769,21 1.9,7.63636364 0,0 L38,0 Z"
+                  d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
                 ></path>
               </g>
-
-              <g id="bottom-sand" transform="translate(18, 55)">
-                <clipPath id="bottom-clip-path" fill="white">
-                  <rect x="0" y="0" width="38" height="21"></rect>
-                </clipPath>
-
-                <g clip-path="url(#bottom-clip-path)">
-                  <path
-                    fill="#F5A623"
-                    d="M0,21 L38,21 C36.1,13.3636364 24.581231,0 19,0 C13.181231,0 1.781231,13.4829545 0,21 Z"
-                  ></path>
-                </g>
-              </g>
             </g>
-          </svg>
-
-          <img src={hourGlass} alt="loading..." />
+          </g>
+        </svg>
         {/* </div> */}
       </div>
-      <p className="home-title">
+      {/* <p className="home-title">
         SURF
         <b>
           KOOK<sup>Z</sup>
         </b>
-      </p>
+      </p> */}
+
+      <img id = "logo-title" src="./surfkookz-logo-title.png" />
 
 
       {/* {wallet && (
@@ -270,40 +263,35 @@ const Home = (props: HomeProps) => {
         {!wallet ? (
           <ConnectButton>Connect Wallet</ConnectButton>
         ) : (
-
           <>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
+            <div id="react-root"></div>
+            <Slots />
 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
-          {/* <div id="react-root"></div>  */}
-          <Slots />
-          
-
-
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
-          >
-            {isSoldOut ? (
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
+            <MintButton
+              disabled={isSoldOut || isMinting || !isActive}
+              onClick={onMint}
+              variant="contained"
+            >
+              {isSoldOut ? (
+                "SOLD OUT"
+              ) : isActive ? (
+                isMinting ? (
+                  <CircularProgress />
+                ) : (
+                  "MINT"
+                )
               ) : (
-                "MINT"
-              )
-            ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
-              />
-            )}
-          </MintButton>
-      </>
-
+                <Countdown
+                  date={startDate}
+                  onMount={({ completed }) => completed && setIsActive(true)}
+                  onComplete={() => setIsActive(true)}
+                  renderer={renderCounter}
+                />
+              )}
+            </MintButton>
+          </>
         )}
       </MintContainer>
 
@@ -320,24 +308,37 @@ const Home = (props: HomeProps) => {
         </Alert>
       </Snackbar>
 
-     
-
+      <br />
+      <h1>Minting starts at 9 PM UTC</h1>
       <p>FOR PROJECT WHITEPAPER CHECK</p>
+      <a href="#" id="image-container">
+        <img src={"./wallet.png"} alt="altt" className="social-icons" />
+        <div className="top">
+          {wallet && (
+            <>
+              <p className="wallet">
+              {(balance || 0).toFixed(2)} <br />
+                <div style={{textAlign: 'center'}}>
+                  SOL
+                  </div>
+              </p>
+            </>
+          )}
+        </div>
+      </a>
       <a href="https://surfkookz.gitbook.io/getting-started/">
-        <img id = "gitBookLogo" src = {GitBookLogo} />
-        </a>
+        <img id="gitBookLogo" className="grow" src={"/GitBook.png"} />
+      </a>
       <div className="social-links">
         <a href="https://discord.gg/uWYcBM4R68">
-        <img className = "social-icon" src = {discordLogo} />
+          <img className="social-icon grow" src="./discord.svg" />
         </a>
         <a href="https://twitter.com/surfKookz">
-        <img className = "social-icon" src = {twitterLogo} />
+          <img className="social-icon grow" src="./twitter.svg" />
         </a>
         <a href="https://www.instagram.com/surfkookz/">
-        <img className = "social-icon" src = {instagramLogo} />
+          <img className="social-icon grow" src="./instagram.svg" />
         </a>
-        
-
       </div>
     </main>
   );
