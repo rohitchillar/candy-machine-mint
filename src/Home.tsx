@@ -173,7 +173,7 @@ const Home = (props: HomeProps) => {
   return (
     <main>
       <div className="hour-glass">
-        {/* <div> */}
+        {/* <div>
         <svg
           width="50px"
           height="60px"
@@ -232,7 +232,15 @@ const Home = (props: HomeProps) => {
               </g>
             </g>
           </g>
-        </svg>
+        </svg> */}
+        <table>
+          <td>
+            <span>
+              <span></span>
+              <span></span>
+            </span>
+          </td>
+        </table>
         {/* </div> */}
       </div>
       <p className="home-title">
@@ -306,21 +314,19 @@ const Home = (props: HomeProps) => {
       <br />
       <h1>Minting starts at 9 PM UTC</h1>
       <p>FOR PROJECT WHITEPAPER CHECK</p>
-      <a href="#" id="image-container">
+      <div id="image-container">
         <img src={"./wallet.png"} alt="altt" className="social-icons" />
         <div className="top">
           {wallet && (
             <>
               <p className="wallet">
-              {(balance || 0).toFixed(2)} <br />
-                <div style={{textAlign: 'center'}}>
-                  SOL
-                  </div>
+                {(balance || 0).toFixed(2)} <br />
+                <div style={{ textAlign: "center" }}>SOL</div>
               </p>
             </>
           )}
         </div>
-      </a>
+      </div>
       <a href="https://surfkookz.gitbook.io/getting-started/">
         <img id="gitBookLogo" src={"/GitBook.png"} />
       </a>
