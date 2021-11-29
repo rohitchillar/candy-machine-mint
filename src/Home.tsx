@@ -26,7 +26,7 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`background-color: yellow;`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -239,7 +239,7 @@ const Home = (props: HomeProps) => {
       </p>
 
 
-      {wallet && (
+      {/* {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
 
@@ -249,12 +249,22 @@ const Home = (props: HomeProps) => {
 
       {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
+      {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
       <MintContainer>
         {!wallet ? (
           <ConnectButton>Connect Wallet</ConnectButton>
         ) : (
+
+          <>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
+          {/* <div id="react-root"></div>  */}
+          <Slots />
+          
+
+
           <MintButton
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
@@ -277,6 +287,8 @@ const Home = (props: HomeProps) => {
               />
             )}
           </MintButton>
+      </>
+
         )}
       </MintContainer>
 
@@ -293,10 +305,7 @@ const Home = (props: HomeProps) => {
         </Alert>
       </Snackbar>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
-      {/* <div id="react-root"></div>  */}
-      <Slots />
+     
 
       <p>FOR PROJECT WHITEPAPER CHECK</p>
       <a>GIRBOOK</a>

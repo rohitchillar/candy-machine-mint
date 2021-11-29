@@ -28,6 +28,10 @@ button{
   background-color: green;
 }
 
+MintButton{
+  background-color: hotpink;
+}
+
 main{
   display: flex;
   flex-direction: column;
@@ -142,7 +146,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .container {
   position: absolute;
-  top: 2px;
+  /* top: 2px; */
+  top:0.6rem;
   width: 100%;
   transition: top ease-in-out 0.5s;
   text-align: center;

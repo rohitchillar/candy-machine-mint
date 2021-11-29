@@ -11,13 +11,6 @@ const { createRef , Component } = React;
 
 
 
-
-
-
-
-
-
-
 class Slots extends Component {
   static defaultProps = {
     fruits: [sl1,sl2,sl3,sl4]
@@ -70,6 +63,10 @@ class Slots extends Component {
   render() {
     return (
       <div className="SlotMachine">
+
+        {/* {this.roll} */}
+        {/* {!this.state.rolling && this.roll} */}
+
         <div className="slot">
           <section>
             <div className="container" ref={this.slotRef[0]}>
