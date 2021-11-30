@@ -200,6 +200,8 @@ const Home = (props: HomeProps) => {
       {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
 
+<Slots props={rollingg}/>
+
 
 <MintContainer style={{display:"flex" , flexDirection:"column" ,alignItems:"center"}}>
         {!wallet ? (
@@ -220,7 +222,6 @@ const Home = (props: HomeProps) => {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
           <div id="react-root"></div>
-          <Slots props={rollingg}/>
           
 
 
