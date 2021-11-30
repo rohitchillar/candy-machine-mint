@@ -46,7 +46,7 @@ const Home = (props: HomeProps) => {
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
-  const [rollingg,setRollingg] = useState(true);
+  const [rollingg, setRollingg] = useState(true);
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
   const [itemsRemaining, setItemsRemaining] = useState(0);
@@ -175,19 +175,18 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <main>
-    
-      {/* <p className="home-title">
+    <>
+      <main>
+        {/* <p className="home-title">
         SURF
         <b>
           KOOK<sup>Z</sup>
         </b>
       </p> */}
 
-      <img id = "logo-title" src="./surfkookz-logo-title.png" />
+        <img id="logo-title" src="./surfkookz-logo-title.png" />
 
-
-      {/* {wallet && (
+        {/* {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
 
@@ -199,113 +198,143 @@ const Home = (props: HomeProps) => {
 
       {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
+        <Slots props={rollingg} />
 
-<Slots props={rollingg}/>
-
-
-<MintContainer style={{display:"flex" , flexDirection:"column" ,alignItems:"center"}}>
-        {!wallet ? (
-
-
-// ,padding: 9px,width: 16rem,text-align: center
-          <ConnectButton style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"5px" , width:"16rem" , color:"#000" , justifyContent:"center"}}>
-            
-            <span style={{fontSize:"1.2rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Connect Wallet</span
-            
-            ></ConnectButton>
-          // <ConnectButton style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}><span style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></span></ConnectButton>
-          // <div style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></div>
-        ) : (
-
-          <>
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
-          <div id="react-root"></div>
-          
-
-
-          <MintButton
-            disabled={isSoldOut || isMinting || !isActive}
-            onClick={onMint}
-            variant="contained"
-            // style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black",fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}
-            style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)" , padding:"5px" , width:"16rem" , color:"#000" ,  justifyContent:"center"}}
-          >
-
-            {isSoldOut ? (
-              
-              
-              "SOLD OUT"
-            ) : isActive ? (
-              isMinting ? (
-                <CircularProgress />
-              ) : (
-                <span style={{fontSize:"1.2rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black" }}>Mint Now</span>
-                )
-            ) : (
-              <Countdown
-                date={startDate}
-                onMount={({ completed }) => completed && setIsActive(true)}
-                onComplete={() => setIsActive(true)}
-                renderer={renderCounter}
-              />
-            )}
-          </MintButton>
-            <p id ="mint-price">MINT PRICE : 0.5 SOL</p>
-          <div id="image-container-wallet">
-        <img src={"./wallet.png"} alt="altt" id="image-container-wallet-img" />
-        <div className="centered">
-          {wallet && (
+        <MintContainer
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {!wallet ? (
+            // ,padding: 9px,width: 16rem,text-align: center
+            <ConnectButton
+              style={{
+                background:
+                  "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)",
+                padding: "5px",
+                width: "16rem",
+                color: "#000",
+                justifyContent: "center",
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "1.2rem",
+                  fontWeight: "bolder",
+                  letterSpacing: 3,
+                  textTransform: "uppercase",
+                  fontFamily: "Avenir - Black",
+                }}
+              >
+                Connect Wallet
+              </span>
+            </ConnectButton>
+          ) : (
+            // <ConnectButton style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}><span style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></span></ConnectButton>
+            // <div style={{backgroundImage: "url(" + "/CONNECT-WALLET.png" + ")"}}></div>
             <>
-              <p className="wallet">
-              {(balance || 0).toFixed(2)} <br />
-                <div style={{textAlign: 'center'}}>
-                  SOL
-                  </div>
-              </p>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.8.4/umd/react.production.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.8.4/umd/react-dom.production.min.js"></script>
+              <div id="react-root"></div>
+
+              <MintButton
+                disabled={isSoldOut || isMinting || !isActive}
+                onClick={onMint}
+                variant="contained"
+                // style={{background: "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)", color:"black",fontSize:"1.6rem",fontWeight:"bolder", letterSpacing:3, textTransform:"uppercase", fontFamily:"Avenir - Black"}}
+                style={{
+                  background:
+                    "linear-gradient(to top, #edd34c 0%, #bd9000 16%, #ab7500 45%, #d7b726 60%, #f7f19a 80%, #f4e85d 100%)",
+                  padding: "5px",
+                  width: "16rem",
+                  color: "#000",
+                  justifyContent: "center",
+                }}
+              >
+                {isSoldOut ? (
+                  "SOLD OUT"
+                ) : isActive ? (
+                  isMinting ? (
+                    <CircularProgress />
+                  ) : (
+                    <span
+                      style={{
+                        fontSize: "1.2rem",
+                        fontWeight: "bolder",
+                        letterSpacing: 3,
+                        textTransform: "uppercase",
+                        fontFamily: "Avenir - Black",
+                      }}
+                    >
+                      Mint Now
+                    </span>
+                  )
+                ) : (
+                  <Countdown
+                    date={startDate}
+                    onMount={({ completed }) => completed && setIsActive(true)}
+                    onComplete={() => setIsActive(true)}
+                    renderer={renderCounter}
+                  />
+                )}
+              </MintButton>
+              <p id="mint-price">MINT PRICE : 0.25 SOL</p>
+              <div id="image-container-wallet">
+                <img
+                  src={"./wallet.png"}
+                  alt="altt"
+                  id="image-container-wallet-img"
+                />
+                <div className="centered">
+                  {wallet && (
+                    <>
+                      <p className="wallet">
+                        {(balance || 0).toFixed(2)} <br />
+                        <div style={{ textAlign: "center" }}>SOL</div>
+                      </p>
+                    </>
+                  )}
+                </div>
+              </div>
             </>
           )}
-        </div>
-      </div>
-      </>
+        </MintContainer>
 
-        )}
-
-       
-      </MintContainer>
-
-      <Snackbar
-        open={alertState.open}
-        autoHideDuration={6000}
-        onClose={() => setAlertState({ ...alertState, open: false })}
-      >
-        <Alert
+        <Snackbar
+          open={alertState.open}
+          autoHideDuration={6000}
           onClose={() => setAlertState({ ...alertState, open: false })}
-          severity={alertState.severity}
         >
-          {alertState.message}
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={() => setAlertState({ ...alertState, open: false })}
+            severity={alertState.severity}
+          >
+            {alertState.message}
+          </Alert>
+        </Snackbar>
 
-      
-    
-      <p>FOR PROJECT WHITEPAPER CHECK</p>
-      <a href="https://surfkookz.gitbook.io/getting-started/">
-        <img id="gitBookLogo" className="grow" src={"/GitBook.png"} />
-      </a>
-      <div className="social-links">
-        <a href="https://discord.gg/uWYcBM4R68">
-          <img className="social-icon grow" src="./discord.svg" />
+        <p>FOR PROJECT WHITEPAPER CHECK</p>
+        <a href="https://surfkookz.gitbook.io/getting-started/">
+          <img id="gitBookLogo" className="grow" src={"/GitBook.png"} />
         </a>
-        <a href="https://twitter.com/surfKookz">
-          <img className="social-icon grow" src="./twitter.svg" />
-        </a>
-        <a href="https://www.instagram.com/surfkookz/">
-          <img className="social-icon grow" src="./instagram.svg" />
-        </a>
-      </div>
-    </main>
+        <div className="social-links">
+          <a href="https://discord.gg/uWYcBM4R68">
+            <img className="social-icon grow" src="./discord.svg" />
+          </a>
+          <a href="https://twitter.com/surfKookz">
+            <img className="social-icon grow" src="./twitter.svg" />
+          </a>
+          <a href="https://www.instagram.com/surfkookz/">
+            <img className="social-icon grow" src="./instagram.svg" />
+          </a>
+        </div>
+      </main>
+      {/* <p className="powered-by">
+        Powered by <a className="powered-by-link grow" href="https://chain-reality.com/">Chain-reality.com</a>
+      </p> */}
+    </>
   );
 };
 
