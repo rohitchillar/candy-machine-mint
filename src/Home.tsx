@@ -280,7 +280,7 @@ const Home = (props: HomeProps) => {
                   />
                 )}
               </MintButton>
-              <p id="mint-price">MINT PRICE : 0.25 SOL</p>
+              <p id="mint-price">MINT PRICE : 0.1 SOL</p>
               <div id="image-container-wallet">
                 <img
                   src={"./wallet.png"}
